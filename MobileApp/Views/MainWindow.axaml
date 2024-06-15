@@ -8,5 +8,7 @@
         x:Class="MobileApp.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="Custom App">
+  
         <views:MainView />
+
 </Window>

@@ -12,6 +12,11 @@
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
     <vm:MainViewModel />
   </Design.DataContext>
-
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+  <StackPanel>
+    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" Margin="0,20,0,0" Foreground="White"/>
+    <!-- Add your checkbox or button here -->
+    <CheckBox IsChecked="True" Margin="20,20,0,0" Foreground="White">Check me!</CheckBox>
+    <Button Foreground="White" Margin="20,15,0,0" Background="Gray" >Click me!</Button>
+    <TextBox HorizontalAlignment="Left" Width="300" Margin="20,20,0,0" TextWrapping="Wrap"></TextBox>
+  </StackPanel>
 </UserControl>

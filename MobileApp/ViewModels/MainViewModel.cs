@@ -2,5 +2,5 @@
 
 public class MainViewModel : ViewModelBase
 {
-    public string Greeting => "Welcome to Aaron's Custom App!";
+    public string Greeting => "Custom App V1.0.1";
 }
