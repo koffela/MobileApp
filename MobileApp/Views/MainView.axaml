@@ -6,17 +6,44 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="MobileApp.Views.MainView"
              x:DataType="vm:MainViewModel"
-			 Background="Black">
-  <Design.DataContext>
-    <!-- This only sets the DataContext for the previewer in an IDE,
+             Background="Black">
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-    <vm:MainViewModel />
-  </Design.DataContext>
-  <StackPanel>
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" Margin="0,20,0,0" Foreground="White"/>
-    <!-- Add your checkbox or button here -->
-    <CheckBox IsChecked="True" Margin="20,20,0,0" Foreground="White">Check me!</CheckBox>
-    <Button Foreground="White" Margin="20,15,0,0" Background="Gray" >Click me!</Button>
-    <TextBox HorizontalAlignment="Left" Width="300" Margin="20,20,0,0" TextWrapping="Wrap"></TextBox>
-  </StackPanel>
+		<vm:MainViewModel />
+	</Design.DataContext>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<!-- Content row -->
+			<RowDefinition Height="auto" />
+			<!-- Navigation row -->
+		</Grid.RowDefinitions>
+		<StackPanel Grid.Row="0">
+			<TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" Margin="0,20,0,0" Foreground="White"/>
+			<!-- Add your checkbox or button here -->
+			<CheckBox IsChecked="True" Margin="20,20,0,0" Foreground="White">Check me!
+			</CheckBox>
+			<Button x:Name="myButton" Content="Click me!" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40" Width="80" Command="{Binding ButtonClickCommand}" Foreground="White" Margin="20,15,0,0" Background="Gray">
+			</Button>
+			<TextBox x:Name="myTextBox" HorizontalAlignment="Left" Width="300" Margin="20,20,0,0" TextWrapping="Wrap" Text="{Binding MyTextProperty}" FontSize="24">
+			</TextBox>
+		</StackPanel>
+		<StackPanel Grid.Row="1" VerticalAlignment="Bottom">
+		<TabControl HorizontalAlignment="Center">
+			<TabItem Header="Home">
+				<!-- content for Tab 1 goes here -->
+			</TabItem>
+			<TabItem Header="Page 2">
+				<!-- content for Tab 2 goes here -->
+			</TabItem>
+			<TabItem Header="Page 3">
+				<!-- content for Tab 3 goes here -->
+			</TabItem>
+			<TabItem Header="Page 4">
+				<!-- content for Tab 4 goes here -->
+			</TabItem>
+		</TabControl>	
+		</StackPanel>
+		</Grid>
 </UserControl>
