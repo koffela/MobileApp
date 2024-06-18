@@ -21,7 +21,7 @@ namespace MobileApp.ViewModels
             }
         }
 
-        public string Greeting => "Custom App V1.0.1";
+        public string Greeting => "Custom App V1.1.2";
 
         public MainViewModel()
         {
